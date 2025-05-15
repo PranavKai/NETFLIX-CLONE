@@ -89,7 +89,7 @@ const VideoPlayer = ({ title, videoUrl, thumbnailUrl, showId }: VideoPlayerProps
     setSeeking(true);
   };
 
-  const handleSeekMouseUp = (_event: React.MouseEvent | React.TouchEvent, newValue: number | number[]) => {
+  const handleSeekMouseUp = (event: Event | React.SyntheticEvent<Element, Event>, newValue: number | number[]) => {
     setSeeking(false);
     playerRef.current?.seekTo(newValue as number);
   };

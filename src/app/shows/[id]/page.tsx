@@ -3,11 +3,11 @@
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
+import Grid from '@mui/material/Grid';
 import {
   Box,
   Container,
   Typography,
-  Grid,
   Button,
   Chip,
   Tabs,
@@ -174,7 +174,7 @@ export default function ShowDetailsPage() {
       >
         <Container maxWidth="lg">
           <Grid container spacing={4}>
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Box
                 sx={{
                   height: '400px',
@@ -194,7 +194,7 @@ export default function ShowDetailsPage() {
                 />
               </Box>
             </Grid>
-            <Grid item xs={12} md={8}>
+            <Grid size={{ xs: 12, md: 8 }}>
               <Typography variant="h3" gutterBottom sx={{ fontWeight: 700 }}>
                 {show.name}
               </Typography>
@@ -309,12 +309,12 @@ export default function ShowDetailsPage() {
                           onClick={() => router.push(`/watch/${showId}?episode=${episode.id}`)}
                         >
                           <Grid container spacing={2} alignItems="center">
-                            <Grid item xs={1}>
+                            <Grid size={{ xs: 1 }}>
                               <Typography variant="body2" color="text.secondary">
                                 {episode.number}
                               </Typography>
                             </Grid>
-                            <Grid item xs={2} sm={1}>
+                            <Grid size={{ xs: 2, sm: 1 }}>
                               {episode.image?.medium ? (
                                 <Box sx={{ width: '40px', height: '30px', position: 'relative', borderRadius: 1, overflow: 'hidden' }}>
                                   <Image
@@ -335,7 +335,7 @@ export default function ShowDetailsPage() {
                                 />
                               )}
                             </Grid>
-                            <Grid item xs={9} sm={10}>
+                            <Grid size={{ xs: 9, sm: 10 }}>
                               <ListItemText
                                 primary={episode.name}
                                 secondary={
@@ -365,52 +365,52 @@ export default function ShowDetailsPage() {
           <TabPanel value={tabValue} index={1}>
             <Box sx={{ p: 3 }}>
               <Grid container spacing={4}>
-                <Grid item xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Typography variant="h6" gutterBottom>
                     Details
                   </Typography>
                   <Divider sx={{ mb: 2 }} />
                   
                   <Grid container spacing={2}>
-                    <Grid item xs={4}>
+                    <Grid size={{ xs: 4 }}>
                       <Typography variant="body2" color="text.secondary">
                         Status
                       </Typography>
                     </Grid>
-                    <Grid item xs={8}>
+                    <Grid size={{ xs: 8 }}>
                       <Typography variant="body2">
                         {show.status || 'Unknown'}
                       </Typography>
                     </Grid>
                     
-                    <Grid item xs={4}>
+                    <Grid size={{ xs: 4 }}>
                       <Typography variant="body2" color="text.secondary">
                         Network
                       </Typography>
                     </Grid>
-                    <Grid item xs={8}>
+                    <Grid size={{ xs: 8 }}>
                       <Typography variant="body2">
                         {show.network?.name || 'Unknown'}
                       </Typography>
                     </Grid>
                     
-                    <Grid item xs={4}>
+                    <Grid size={{ xs: 4 }}>
                       <Typography variant="body2" color="text.secondary">
                         Premiered
                       </Typography>
                     </Grid>
-                    <Grid item xs={8}>
+                    <Grid size={{ xs: 8 }}>
                       <Typography variant="body2">
                         {show.premiered || 'Unknown'}
                       </Typography>
                     </Grid>
                     
-                    <Grid item xs={4}>
+                    <Grid size={{ xs: 4 }}>
                       <Typography variant="body2" color="text.secondary">
                         Genres
                       </Typography>
                     </Grid>
-                    <Grid item xs={8}>
+                    <Grid size={{ xs: 8 }}>
                       <Typography variant="body2">
                         {show.genres.join(', ') || 'None listed'}
                       </Typography>
@@ -418,7 +418,7 @@ export default function ShowDetailsPage() {
                   </Grid>
                 </Grid>
                 
-                <Grid item xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Typography variant="h6" gutterBottom>
                     Rating & Info
                   </Typography>
