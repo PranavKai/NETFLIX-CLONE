@@ -89,11 +89,6 @@ const NavBar = () => {
     setAnchorEl(null);
   };
 
-  const toggleSearch = () => {
-    setSearchOpen(!searchOpen);
-    if (searchOpen) setSearchQuery('');
-  };
-
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {

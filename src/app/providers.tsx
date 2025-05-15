@@ -3,7 +3,7 @@
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
-import { red, deepPurple, indigo } from '@mui/material/colors';
+import { red, deepPurple } from '@mui/material/colors';
 
 // Creating a Material 3 Expressive theme
 const theme = createTheme({

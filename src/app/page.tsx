@@ -13,8 +13,7 @@ export default function Home() {
   const [dramaShows, setDramaShows] = useState<Show[]>([]);
   const [comedyShows, setComedyShows] = useState<Show[]>([]);
   const [sciFiShows, setSciFiShows] = useState<Show[]>([]);
-  const [loading, setLoading] = useState(true);
-
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -37,8 +36,6 @@ export default function Home() {
 
       } catch (error) {
         console.error('Error fetching data:', error);
-      } finally {
-        setLoading(false);
       }
     };
 

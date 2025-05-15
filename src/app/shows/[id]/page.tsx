@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import Image from 'next/image';
 import {
   Box,
   Container,
@@ -177,19 +178,19 @@ export default function ShowDetailsPage() {
               <Box
                 sx={{
                   height: '400px',
+                  width: '100%',
                   borderRadius: 2,
                   overflow: 'hidden',
                   boxShadow: '0px 5px 15px rgba(0,0,0,0.5)',
-                  '& img': {
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  },
+                  position: 'relative',
                 }}
               >
-                <img
+                <Image
                   src={show.image?.original || 'https://via.placeholder.com/300x450?text=No+Image'}
                   alt={show.name}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 600px) 100vw, 400px"
                 />
               </Box>
             </Grid>
@@ -315,12 +316,14 @@ export default function ShowDetailsPage() {
                             </Grid>
                             <Grid item xs={2} sm={1}>
                               {episode.image?.medium ? (
-                                <Box
-                                  component="img"
-                                  src={episode.image.medium}
-                                  alt={episode.name}
-                                  sx={{ width: '40px', height: '30px', objectFit: 'cover', borderRadius: 1 }}
-                                />
+                                <Box sx={{ width: '40px', height: '30px', position: 'relative', borderRadius: 1, overflow: 'hidden' }}>
+                                  <Image
+                                    src={episode.image.medium}
+                                    alt={episode.name}
+                                    fill
+                                    style={{ objectFit: 'cover' }}
+                                  />
+                                </Box>
                               ) : (
                                 <Box
                                   sx={{

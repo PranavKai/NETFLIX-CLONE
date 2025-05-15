@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Base URL for TVMaze API
-const API_BASE_URL = 'https://api.tvmaze.com';
+// Base URL for TVMaze API - use environment variable if available
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://api.tvmaze.com';
 
 // Interface for Show data
 export interface Show {
